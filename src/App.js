@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <main className="App"></main>
     </>
   );
 }
