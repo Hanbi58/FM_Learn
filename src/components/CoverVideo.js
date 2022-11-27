@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MainVideo from "../assets/Walking Girl.mp4";
+import { motion } from "framer-motion";
 
 const VideoContainer = styled.section`
   width: 100%;
@@ -23,7 +24,7 @@ const VideoContainer = styled.section`
 //   z-index: 1;
 //   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.6)`};
 // `;
-const Title = styled.div`
+const Title = styled(motion.div)`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -56,23 +57,57 @@ const Title = styled.div`
   }
 `;
 
+const conVariant = {
+  hide: { opacity: 0 },
+  show: {
+    opacity: 1,
+
+    transition: { delayChildren: 2, staggerChildren: 0.3 },
+  },
+};
+const itemVariant = {
+  hide: { opacity: 0 },
+  show: {
+    opacity: 1,
+  },
+};
 const CoverVideo = () => {
   return (
     <VideoContainer>
-      <Title>
+      <Title variants={conVariant} initial="hide" animate="show">
         <div>
-          <h1 data-scroll data-scroll-delay="0.2" data-scroll-speed="4">
+          <motion.h1
+            variants={itemVariant}
+            data-scroll
+            data-scroll-delay="0.2"
+            data-scroll-speed="4"
+          >
             W
-          </h1>
-          <h1 data-scroll data-scroll-delay="0.15" data-scroll-speed="4">
+          </motion.h1>
+          <motion.h1
+            variants={itemVariant}
+            data-scroll
+            data-scroll-delay="0.15"
+            data-scroll-speed="4"
+          >
             i
-          </h1>
-          <h1 data-scroll data-scroll-delay="0.1" data-scroll-speed="4">
+          </motion.h1>
+          <motion.h1
+            variants={itemVariant}
+            data-scroll
+            data-scroll-delay="0.1"
+            data-scroll-speed="4"
+          >
             b
-          </h1>
-          <h1 data-scroll data-scroll-delay="0.05" data-scroll-speed="4">
+          </motion.h1>
+          <motion.h1
+            variants={itemVariant}
+            data-scroll
+            data-scroll-delay="0.05"
+            data-scroll-speed="4"
+          >
             e
-          </h1>
+          </motion.h1>
         </div>
         <h2 data-scroll data-scroll-delay="0.05" data-scroll-speed="2">
           Inspire. Create. Belive
